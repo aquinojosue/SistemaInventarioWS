@@ -4,7 +4,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoEliminar'])) {
     $obj = json_decode($_POST["elementoEliminar"], false);
     $stmt = $con->prepare("DELETE FROM catalogoequipo WHERE catalogo_id = ?");
-    $stmt->bind_param("i", $obj->catalogo_id);
+    $stmt->bind_param("s", $obj->catalogo_id);
     $stmt->execute();
 
     if ($stmt->affected_rows == 1) {

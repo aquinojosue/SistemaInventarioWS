@@ -1,10 +1,10 @@
 <?php
-include("..\db.php");
+include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoActualizar'])) {
     $obj = json_decode($_POST["elementoActualizar"], false);
 
-    $stmt = $con->prepare("UPDATE movimientoinventario SET tipo_movimiento_id = ?, docentes_id = ?, equipo_id = ?, descripcion = ?, prestamo_fecha_ini = ?, prestamo_fecha_fin = ?, prestamo_permanente = ?, prestamo_activo = ? WHERE prestamo_id = ?");
+    $stmt = $con->prepare("UPDATE MOVIMIENTOINVENTARIO SET TIPO_MOVIMIENTO_ID = ?, DOCENTES_ID = ?, EQUIPO_ID = ?, DESCRIPCION = ?, PRESTAMO_FECHA_INI = ?, PRESTAMO_FECHA_FIN = ?, PRESTAMO_PERMANENTE = ?, PRESTAMO_ACTIVO = ? WHERE PRESTAMO_ID = ?");
     $stmt->bind_param('iiisssiii',
         $obj->tipo_movimiento_id,
         $obj->docentes_id,

@@ -1,5 +1,5 @@
 <?php
-include("..\db.php");
-$resultado = $con->query("select * from motivo");
+include("../db.php");
+$resultado = $con->query("select * from MOTIVO");
 $salida = $resultado->fetch_all(MYSQLI_ASSOC);
 echo json_encode($salida);

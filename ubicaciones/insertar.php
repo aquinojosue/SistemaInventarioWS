@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO ubicaciones VALUES(?, ?)");
+    $stmt = $con->prepare("INSERT INTO UBICACIONES VALUES(?, ?)");
 
     $stmt->bind_param('is', $obj->ubicacion_id, $obj->ubicacion_nombre);
     $stmt->execute();

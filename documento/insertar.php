@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO documento VALUES(?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO DOCUMENTO VALUES(?, ?, ?, ?, ?, ?, ?)");
 
     $stmt->bind_param('iiissss',
         $obj->escrito_id,

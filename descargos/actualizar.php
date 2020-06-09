@@ -1,10 +1,10 @@
 <?php
-include("..\db.php");
+include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoActualizar'])) {
     $obj = json_decode($_POST["elementoActualizar"], false);
 
-    $stmt = $con->prepare("UPDATE descargos SET ubicacion_origen_id = ?, ubicacion_destino_id = ?, descargo_fecha = ? WHERE descargo_id = ?");
+    $stmt = $con->prepare("UPDATE DESCARGOS SET UBICACION_ORIGEN_ID = ?, UBICACION_DESTINO_ID = ?, DESCARGO_FECHA = ? WHERE DESCARGO_ID = ?");
     $stmt->bind_param('iisi',
     	$obj->ubicacion_origen_id,
     	$obj->ubicacion_destino_id,

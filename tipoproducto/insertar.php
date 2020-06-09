@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO TipoProducto VALUES(?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO TIPOPRODUCTO VALUES(?, ?, ?)");
 
     $stmt->bind_param('iis', $obj->tipo_producto_id, $obj->categoria_id, $obj->nombre_tipo_producto);
     $stmt->execute();

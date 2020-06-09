@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO autor VALUES(?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO AUTOR VALUES(?, ?, ?)");
 
     $stmt->bind_param('iss', $obj->idAutor, $obj->nomAutor, $obj->apeAutor);
     $stmt->execute();

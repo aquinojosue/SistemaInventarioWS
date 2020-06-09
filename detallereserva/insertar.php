@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO detallereserva VALUES(?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO DETALLERESERVA VALUES(?, ?, ?)");
 
     $stmt->bind_param('iii', $obj->hora_id, $obj->dia_cod, $obj->prestamo_id);
     $stmt->execute();

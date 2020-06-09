@@ -3,7 +3,7 @@ include("../db.php");
 //Obtenemos el parametro por medio de json.
 if (isset($_POST['elementoConsulta'])) {
     $obj = json_decode($_POST["elementoConsulta"], false);
-    $stmt = $con->prepare("SELECT * FROM descargos WHERE descargo_id = ?");
+    $stmt = $con->prepare("SELECT * FROM DESCARGOS WHERE DESCARGO_ID = ?");
     $stmt->bind_param("i", $obj->descargo_id);
     $stmt->execute();
     $resultado = $stmt->get_result();

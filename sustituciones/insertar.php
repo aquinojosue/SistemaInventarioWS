@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO sustituciones VALUES(?, ?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO SUSTITUCIONES VALUES(?, ?, ?, ?, ?)");
 
     $stmt->bind_param('iiiii',
         $obj->sustitucion_id,

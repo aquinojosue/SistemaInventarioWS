@@ -3,7 +3,7 @@ include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoEliminar'])) {
     $obj = json_decode($_POST["elementoEliminar"], false);
-    $stmt = $con->prepare("DELETE FROM detalleautor WHERE escrito_id = ? AND idAutor = ?");
+    $stmt = $con->prepare("DELETE FROM DETALLEAUTOR WHERE ESCRITO_ID = ? AND IDAUTOR = ?");
     $stmt->bind_param("ii", $obj->escrito_id, $obj->idAutor);
     $stmt->execute();
 

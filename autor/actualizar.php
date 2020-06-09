@@ -1,10 +1,10 @@
 <?php
-include("..\db.php");
+include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoActualizar'])) {
     $obj = json_decode($_POST["elementoActualizar"], false);
 
-    $stmt = $con->prepare("UPDATE autor SET nomAutor = ?, apeAutor = ? WHERE idautor = ?");
+    $stmt = $con->prepare("UPDATE AUTOR SET NOMAUTOR = ?, APEAUTOR = ? WHERE IDAUTOR = ?");
     $stmt->bind_param('ssi', $obj->nomAutor, $obj->apeAutor, $obj->idAutor);
     $stmt->execute();
 

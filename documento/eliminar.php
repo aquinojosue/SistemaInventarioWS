@@ -3,7 +3,7 @@ include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoEliminar'])) {
     $obj = json_decode($_POST["elementoEliminar"], false);
-    $stmt = $con->prepare("DELETE FROM documento WHERE escrito_id = ?");
+    $stmt = $con->prepare("DELETE FROM DOCUMENTO WHERE ESCRITO_ID = ?");
     $stmt->bind_param("i", $obj->escrito_id);
     $stmt->execute();
 

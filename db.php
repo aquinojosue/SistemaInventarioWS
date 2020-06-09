@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
-    $usuario = "root";
-    $password = "usbw";
+    $usuario = "phpmyadmin";
+    $password = "admin";
     $base = "inventario";
     $con = mysqli_connect($host, $usuario, $password, $base);
 

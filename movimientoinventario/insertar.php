@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO movimientoinventario VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO MOVIMIENTOINVENTARIO VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $stmt->bind_param('iiiisssii',
         $obj->prestamo_id,

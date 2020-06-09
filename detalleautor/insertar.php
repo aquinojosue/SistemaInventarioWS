@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO detalleautor VALUES(?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO DETALLEAUTOR VALUES(?, ?, ?)");
 
     $stmt->bind_param('iii', $obj->escrito_id, $obj->idAutor, $obj->esPrincipal);
     $stmt->execute();

@@ -3,7 +3,7 @@ include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoEliminar'])) {
     $obj = json_decode($_POST["elementoEliminar"], false);
-    $stmt = $con->prepare("DELETE FROM detalledescargos WHERE equipo_id = ? AND descargo_id = ?");
+    $stmt = $con->prepare("DELETE FROM DETALLEDESCARGOS WHERE EQUIPO_ID = ? AND DESCARGO_ID = ?");
     $stmt->bind_param('iii', $obj->hora_id, $obj->equipo_id, $obj->descargo_id);
     $stmt->execute();
 

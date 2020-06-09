@@ -1,10 +1,10 @@
 <?php
-include("..\db.php");
+include("../db.php");
 $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoActualizar'])) {
     $obj = json_decode($_POST["elementoActualizar"], false);
 
-    $stmt = $con->prepare("UPDATE tipoproducto SET categoria_id = ?, nombre_tipo_producto = ? WHERE tipo_producto_id = ?");
+    $stmt = $con->prepare("UPDATE TIPOPRODUCTO SET CATEGORIA_ID = ?, NOMBRE_TIPO_PRODUCTO = ? WHERE TIPO_PRODUCTO_ID = ?");
     $stmt->bind_param('isi', $obj->categoria_id, $obj->nombre_tipo_producto, $obj->tipo_producto_id);
     $stmt->execute();
 

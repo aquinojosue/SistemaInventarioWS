@@ -4,7 +4,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoActualizar'])) {
     $obj = json_decode($_POST["elementoActualizar"], false);
 
-    $stmt = $con->prepare("UPDATE sustituciones SET motivo_id = ?, equipo_obsoleto_id = ?, equipo_reemplazo_id = ?, docentes_id = ? WHERE sustitucion_id = ?");
+    $stmt = $con->prepare("UPDATE SUSTITUCIONES SET MOTIVO_ID = ?, EQUIPO_OBSOLETO_ID = ?, EQUIPO_REEMPLAZO_ID = ?, DOCENTES_ID = ? WHERE SUSTITUCION_ID = ?");
     $stmt->bind_param('iiiii',
         $obj->sustitucion_id,
         $obj->motivo_id,

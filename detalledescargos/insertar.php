@@ -5,7 +5,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO detalledescargos VALUES(?, ?)");
+    $stmt = $con->prepare("INSERT INTO DETALLEDESCARGOS VALUES(?, ?)");
 
     $stmt->bind_param('ii', $obj->equipo_id, $obj->descargo_id);
     $stmt->execute();

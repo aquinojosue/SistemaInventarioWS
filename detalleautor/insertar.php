@@ -7,7 +7,7 @@ if (isset($_POST['elementoInsertar'])) {
 
     $stmt = $con->prepare("INSERT INTO DETALLEAUTOR VALUES(?, ?, ?)");
 
-    $stmt->bind_param('iii', $obj->escrito_id, $obj->idAutor, $obj->esPrincipal);
+    $stmt->bind_param('iii',$obj->escrito_id, $obj->idAutor, $obj->esPrincipal);
     $stmt->execute();
 
     if ($stmt->affected_rows == 1) {

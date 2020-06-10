@@ -5,10 +5,9 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO DESCARGOS VALUES(?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO DESCARGOS VALUES(null,?, ?, ?)");
 
-    $stmt->bind_param('iiis',
-    	$obj->descargo_id,
+    $stmt->bind_param('iis',
     	$obj->ubicacion_origen_id,
     	$obj->ubicacion_destino_id,
     	$obj->descargo_fecha

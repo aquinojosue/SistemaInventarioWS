@@ -5,9 +5,9 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO DOCENTE VALUES(?, ?)");
+    $stmt = $con->prepare("INSERT INTO DOCENTE VALUES(null, ?)");
 
-    $stmt->bind_param('is', $obj->docentes_id, $obj->docentes_nombre);
+    $stmt->bind_param('s', $obj->docentes_nombre);
     $stmt->execute();
 
     if ($stmt->affected_rows == 1) {

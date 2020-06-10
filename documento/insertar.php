@@ -5,10 +5,9 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoInsertar'])) {
     $obj = json_decode($_POST["elementoInsertar"], false);
 
-    $stmt = $con->prepare("INSERT INTO DOCUMENTO VALUES(?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO DOCUMENTO VALUES(null,?, ?, ?, ?, ?, ?)");
 
-    $stmt->bind_param('iiissss',
-        $obj->escrito_id,
+    $stmt->bind_param('iissss',
         $obj->tipo_producto_id,
         $obj->idioma_id,
         $obj->isbn,
@@ -16,6 +15,7 @@ if (isset($_POST['elementoInsertar'])) {
         $obj->editorial,
         $obj->titulo
     );
+
     $stmt->execute();
 
     if ($stmt->affected_rows == 1) {

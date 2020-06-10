@@ -4,7 +4,7 @@ $respuesta = array('resultado' => 0);
 if (isset($_POST['elementoActualizar'])) {
     $obj = json_decode($_POST["elementoActualizar"], false);
 
-    $stmt = $con->prepare("UPDATE DOCUMENTO SET TIPO_PRODUCTO_ID = ?, IDIOMA_ID = ?, ISBN = ?, EDICION = ?, EDITORIAL = ?, TITULO = ? WHERE ID_ESCRITO = ?");
+    $stmt = $con->prepare("UPDATE DOCUMENTO SET TIPO_PRODUCTO_ID = ?, IDIOMA_ID = ?, ISBN = ?, EDICION = ?, EDITORIAL = ?, TITULO = ? WHERE ESCRITO_ID = ?");
     $stmt->bind_param('iissssi',
         $obj->tipo_producto_id,
         $obj->idioma_id,

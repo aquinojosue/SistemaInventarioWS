@@ -9,7 +9,7 @@ if (isset($_POST['elementoConsulta'])) {
     $resultado = $stmt->get_result();
     $salida = $resultado->fetch_all(MYSQLI_ASSOC);
 
-    echo json_encode($salida);
+    echo json_encode($salida,JSON_UNESCAPED_UNICODE);
     $stmt->close();
 }
 $con->close();
